@@ -1,6 +1,10 @@
 @import "./colors.less";
 
 body {
+  .container {
+    margin-left: 20px;
+    margin-top: 140px;
+  }
   .header {
     top: 0;
     width: 100vw;
@@ -8,8 +12,21 @@ body {
     padding-left: 20px;
     position: fixed;
     // margin: 20px 0;
+    #login-buttons {
+      position: absolute;
+      left: 20px;
+      top: 80px;
+      font-size: 18px;
+      .login-button {
+        background-color: @highlight-color;
+      }
+    }
     h1 {
       font-size: 2.5em;
+      font-weight: 500;
+      b {
+        font-weight: 800;
+      }
     }
   }
 
@@ -19,58 +36,67 @@ body {
     width: 60%;
     box-shadow: 0px 0px 21px 1px fade(@highlight-color, 75%);
     padding-bottom: 50px;
-   h2 {
-     margin: 10px 0;
-     text-align: center;
-     font-size: 2em;
-   }
-   input,
-   .desc {
-     display: block;
-     border: 1px solid fade(@dark-contrast, 60%);
-     padding: 5px;
-     border-radius: 4px;
-     margin: 0 auto;
-     &:focus {
-       outline-color: @dark-contrast;
-     }
-   }
-   .desc {
-     font-size: 1em;
-     width: 70%;
-     resize: vertical;
-     margin: 20px auto;
-   }
-   input {
-     font-size: 1.2em;
-   }
-   .submit {
-     outline: none;
-     width: 120px;
-     height: 30px;
-     border: 1px solid @highlight-color;
-     border-radius: 4px;
-     background: white;
-     position: absolute;
-     left: 50%;
-     transform: translateX(-50%);
-     transition: all .5s ease-out;
-     &.disabled {
-      //  pointer-events: none;
-       color: grey;
-       cursor: not-allowed;
-     }
-     &.active {
-       background-color: @highlight-color;
-       color: white;
-       cursor: pointer;
-     }
-   }
-    // border: 1px solid black;
+    h2 {
+      margin: 10px 0;
+      text-align: center;
+      font-size: 2em;
+    }
+    input,
+    .desc {
+      display: block;
+      border: 1px solid fade(@dark-contrast, 60%);
+      padding: 5px;
+      border-radius: 4px;
+      margin: 0 auto;
+      &:focus {
+        outline-color: @dark-contrast;
+      }
+    }
+    .desc {
+      font-size: 1em;
+      width: 70%;
+      resize: vertical;
+      margin: 20px auto;
+    }
+    input {
+      font-size: 1.2em;
+    }
+    .submit {
+      outline: none;
+      width: 120px;
+      height: 30px;
+      border: 1px solid @highlight-color;
+      border-radius: 4px;
+      background: white;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      transition: all .5s ease-out;
+      &.disabled {
+        //  pointer-events: none;
+        color: grey;
+        cursor: not-allowed;
+      }
+      &.active {
+        background-color: @highlight-color;
+        color: white;
+        cursor: pointer;
+      }
+    }
   }
-
-  .container {
-    margin-left: 20px;
-    margin-top: 140px;
+  .jobs-container {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    .job {
+      margin: 5px;
+      padding: 5px;
+      box-shadow: 0px 0px 2px 1px fade(@highlight-color, 75%);
+      .delete-job {
+        float:right;
+        padding: 10px;
+        cursor: pointer;
+      }
+    }
   }
 }

@@ -33,7 +33,7 @@ const App = React.createClass({
     return (
       <div>
         <div className="header">
-          <h1>GoQuoteMe</h1>
+          <h1><b>Go</b>QuoteMe</h1>
         </div>
         <div className="container">
           <div className="job-create">

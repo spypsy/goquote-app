@@ -12,6 +12,7 @@ const Job = React.createClass({
   render() {
     const {job} = this.props;
     return (<div className="job">
+      <div className="delete-job" onClick={this.deleteJob}>✕</div>
       <h2>{job.title}</h2>
       <p className="job-desc">
         {job.description}
@@ -44,6 +45,12 @@ const Job = React.createClass({
     Jobs.update(this.props.job._id, {
       $push: {bids: bid},
     });
+  },
+
+  deleteJob() {
+    if (window.confirm('Sure you wanna delete that?')) {
+      Jobs.remove(this.props.job._id);
+    }
   },
 });
 
