@@ -44,7 +44,7 @@ const App = React.createClass({
                 placeholder="Name your job"
                 onChange={this.handleTitleChange} />
               <textarea type="text" ref="jobDesc" className="desc"
-                placeholder="Describe your job" rows="8"/>
+                placeholder="Describe your job" rows="8" />
               <button type="submit" value="Submit"
                 className={'submit ' + (submitActive ? 'active' : 'disabled')}>
                 Submit

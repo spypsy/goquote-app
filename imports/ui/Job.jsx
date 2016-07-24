@@ -13,10 +13,10 @@ const Job = React.createClass({
     const {job} = this.props;
     return (<div className="job">
       <div className="delete-job" onClick={this.deleteJob}>✕</div>
-      <h2>{job.title}</h2>
-      <p className="job-desc">
-        {job.description}
-      </p>
+      <div className="job-desc">
+        <h2>{job.title}</h2>
+        <p> {job.description} </p>
+      </div>
       <ul className="job-bids">
         {job.bids.map((bid, j) => {
           return <li key={j}>
@@ -25,10 +25,13 @@ const Job = React.createClass({
         })}
       </ul>
       <form key={'form'} className="new-bid" onSubmit={this.handleBid}>
-        <input type="text" ref="bidDesc"
+        Enter your bid here:
+        <div className="bid-price">
+          <input type="number" ref="bidPrice" />
+          <span className="currency">£</span>
+        </div>
+        <textarea type="text" ref="bidDesc" rows="5"
           placeholder="Type info about your bid..." />
-        <input type="number" ref="bidPrice"
-          placeholder="Price" />
         <input type="submit" value="Submit" />
       </form>
     </div>);

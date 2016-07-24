@@ -1,4 +1,4 @@
-@import "./colors.less";
+@import "./constants.less";
 
 body {
   .container {
@@ -92,6 +92,24 @@ body {
       margin: 5px;
       padding: 5px;
       box-shadow: 0px 0px 2px 1px fade(@highlight-color, 75%);
+      .new-bid {
+        .bid-price {
+          display: block;
+          font-size: 1.8em;
+          input {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+            margin-right: 10px;
+            width: 160px;
+            height: 40px;
+          }
+        }
+        textarea {
+          border: 1px solid fade(@dark-contrast, 60%);
+          width: 90%;
+          font-size: 1.2em;
+        }
+      }
       .delete-job {
         float:right;
         padding: 10px;
